@@ -8,13 +8,16 @@ import { BudgetComponent } from './pages/budget/budget.component';
 import { InitialComponent } from './pages/initial/initial.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { authGuard } from './guard/auth.guard';
 
 export const routes: Routes = [
     {path:'', component:InitialComponent},
     {path:'login', component: LoginComponent},
     {path:'register', component: RegisterComponent},
-    {path:'trips', component: TripsComponent},
-    {path:'planner/:id', component: TripPlannerComponent},
-    {path:'itinerary/:id', component: ItineraryComponent},
-    {path:'budget/:id', component:BudgetComponent},
+
+    
+    {path:'trips', component: TripsComponent, canActivate: [authGuard] },
+    {path:'planner/:id', component: TripPlannerComponent, canActivate: [authGuard] },
+    {path:'itinerary/:id', component: ItineraryComponent, canActivate: [authGuard] },
+    {path:'budget/:id', component:BudgetComponent, canActivate: [authGuard] },
 ];

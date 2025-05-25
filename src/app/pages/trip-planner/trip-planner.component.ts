@@ -30,7 +30,7 @@ export class TripPlannerComponent implements OnInit {
   activityForm!: FormGroup
   selectedDayId!: string
   activities: AtividadeModel[] = []
-  openDays: boolean[] = [];
+  openDays: boolean[] = []
 
   constructor(private route: ActivatedRoute, private tripService: TripService, private daysService: DaysService, private activityService: ActivityService, private fb: FormBuilder){}
 
@@ -72,14 +72,17 @@ export class TripPlannerComponent implements OnInit {
 
   setSelectedDay(dayId: string) {
     this.selectedDayId = dayId
-    this.getActivity(dayId)
   }
 
   getActivity(id: string){
     this.activityService.getActivityByPlannerId(id).subscribe({
       next: (response) => {
         console.log('Atividades recebidas:', response.dados)
-        this.activities = [...this.activities.filter(a => a.planejamentoId !== id), ...response.dados];
+        // Remover atividades antigas desse dia
+        this.activities = this.activities.filter(a => a.planejamentoId !== id);
+
+        // Adicionar as novas atividades
+        this.activities.push(...response.dados);
       },
       error: (err) => {
         console.error('Erro ao buscar atividades:', err)

@@ -11,10 +11,12 @@
        [attr.aria-controls]="'collapse' + i"
        [attr.aria-expanded]="false"
        style="cursor: pointer;">
-    <span class="fw-bold">{{ day.data | date: 'EEEE, d MMMM' : undefined : 'pt-BR' }}</span>
+    <span class="fw-bold">{{ day.data | date: 'EEEE, d MMMM' }}</span>
     <i class="bi bi-chevron-down toggle-icon"></i>
   </div>
-    <div  class="collapse mt-3" [attr.id]="'collapse' + i">
+
+  
+    <div   class="collapse mt-3" [attr.id]="'collapse' + i">
       <ul class="list-group mb-2">
         <li *ngFor="let activity of getActivitiesByDay(day._id) " class="list-group-item">
           <strong>{{activity.atividade}}</strong><br>

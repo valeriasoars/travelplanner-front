@@ -22,4 +22,8 @@ export class AuthService {
   register(register: RegisterModel): Observable<ResponseModel<RegisterModel>>{
     return this.http.post<ResponseModel<RegisterModel>>(`${this.apiUrl}/usuario/cadastrar`, register)
   }
+
+  sair(){
+    localStorage.removeItem('token')
+  }
 }

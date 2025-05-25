@@ -18,7 +18,7 @@ export class SidebarComponent implements AfterViewInit, OnInit  {
   addTripForm!: FormGroup
 
  
-  constructor(private tripService: TripService, private fb: FormBuilder) {
+  constructor(private tripService: TripService, private fb: FormBuilder, private authService: AuthService) {
   }
 
   ngOnInit():void{
@@ -57,7 +57,9 @@ export class SidebarComponent implements AfterViewInit, OnInit  {
 
 
 
-
+  desconect(){
+    this.authService.sair()
+  }
 
   ngAfterViewInit(): void {
     const menuToggle = document.getElementById('menu-toggle');

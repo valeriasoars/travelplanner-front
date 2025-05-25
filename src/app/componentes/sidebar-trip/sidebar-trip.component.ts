@@ -3,6 +3,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TripService } from '../../service/trip/trip.service';
 import { ViagemModel } from '../../models/viagemModel';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../service/auth/auth.service';
 
 @Component({
   selector: 'app-sidebar-trip',
@@ -16,7 +17,7 @@ export class SidebarTripComponent implements OnInit{
   @Input() trip?: ViagemModel;
   tripId!: string
 
-  constructor(private tripService: TripService, private route: ActivatedRoute) {}
+  constructor(private tripService: TripService, private route: ActivatedRoute, private authService: AuthService) {}
 
   ngOnInit(): void {
     const tripId = this.route.snapshot.paramMap.get('id');
@@ -38,6 +39,9 @@ export class SidebarTripComponent implements OnInit{
     })
   }
 
+  desconect(){
+    this.authService.sair()
+  }
 
   
 }
