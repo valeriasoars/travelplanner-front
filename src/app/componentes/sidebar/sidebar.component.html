@@ -1,0 +1,93 @@
+<!-- Navbar fixa no topo -->
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+  <div class="container-fluid">
+    <button class="btn btn-outline-light d-lg-none me-2" id="menu-toggle">☰</button>
+    <a class="navbar-brand ms-2" href="#">TravelPlanner</a>
+
+    <div class="ms-auto">
+      <button type="button" class="btn btn-success fw-bold" id="nova-viagem-btn" data-bs-toggle="modal" data-bs-target="#modalAddTrip">
+        + Nova Viagem
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Wrapper principal -->
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar sobreposta -->
+  <div class="sidebar custom-sidebar d-flex flex-column justify-content-between" id="sidebar-wrapper">
+    
+    <!-- Parte superior -->
+    <div>
+      <div class="list-group list-group-flush px-2">
+        <a class="list-group-item list-group-item-action custom-link" [routerLink]="'/trips'">Viagens</a>
+        <a href="#" class="list-group-item list-group-item-action custom-link">Países</a>
+      </div>
+    </div>
+
+    <!-- Parte inferior -->
+    <div class="sidebar-footer px-2 mb-3">
+      <a href="#" class="list-group-item list-group-item-action custom-link">Configurações</a>
+      <a href="#" class="list-group-item list-group-item-action custom-link text-danger">Sair</a>
+    </div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div id="page-content-wrapper" class="flex-grow-1">
+    <div class="container-fluid  pt-4">
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Modal add trip-->
+<div class="modal fade" id="modalAddTrip" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Nova viagem</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+          <form id="formNovaViagem" [formGroup]="addTripForm" (ngSubmit)="addTrip()">
+            <div class="mb-3">
+              <label for="destino" class="form-label">Destino</label>
+              <input type="text" class="form-control" id="destino" name="destino"  formControlName="destino" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="orcamento" class="form-label">Orçamento Total (R$)</label>
+              <input type="number" class="form-control" id="orcamentoTotal" name="orcamento" min="0"  formControlName="orcamentoTotal" required />
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <label for="dataInicio" class="form-label">Data de Início</label>
+                  <input type="date" class="form-control" id="dataInicio" name="dataInicio" formControlName="dataInicio"required />
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="dataFim" class="form-label">Data de Fim</label>
+                  <input type="date" class="form-control" id="dataFim" name="dataFim" formControlName="dataFim" required  />
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
+          </form>
+ 
+      </div>
+
+    </div>
+  </div>
+</div>
+

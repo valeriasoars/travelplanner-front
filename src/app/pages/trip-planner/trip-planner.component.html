@@ -1,0 +1,80 @@
+<app-sidebar-trip *ngIf="trip" [trip]="trip" ></app-sidebar-trip>
+
+<div id="page-content-wrapper" class="flex-grow-1 p-4">
+  <h1 class="mb-4">Itinerário</h1>
+
+  <!-- DIA 1 -->
+<div *ngFor="let day of days; let i = index" class="itinerary-day border rounded p-3 mb-3">
+  <div class="d-flex justify-content-between align-items-center itinerary-header"
+       data-bs-toggle="collapse"
+       [attr.data-bs-target]="'#collapse' + i"
+       [attr.aria-controls]="'collapse' + i"
+       [attr.aria-expanded]="false"
+       style="cursor: pointer;">
+    <span class="fw-bold">{{ day.data | date: 'EEEE, d MMMM' : undefined : 'pt-BR' }}</span>
+    <i class="bi bi-chevron-down toggle-icon"></i>
+  </div>
+    <div  class="collapse mt-3" [attr.id]="'collapse' + i">
+      <ul class="list-group mb-2">
+        <li *ngFor="let activity of getActivitiesByDay(day._id) " class="list-group-item">
+          <strong>{{activity.atividade}}</strong><br>
+          <small>{{activity.horario}} | Local: {{activity.local}}</small><br>
+          <span>{{activity.descricao}}</span>
+        </li>
+      </ul>
+
+      <div *ngIf="getActivitiesByDay(day._id).length === 0" class="alert alert-info">
+        Nenhuma atividade planejada para este dia.
+      </div>
+
+      <button class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#addActivityModal" (click)="setSelectedDay(day._id)" >+ Adicionar atividade</button>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="addActivityModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form  [formGroup]="activityForm" (ngSubmit)="addActivity()">
+            <div class="mb-3">
+              <label for="atividade" class="form-label">Atividade</label>
+              <input type="text" class="form-control" id="atividade" name="atividade"  formControlName="atividade" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="descricao" class="form-label">Descrição</label>
+              <input type="text" class="form-control" id="descricao" name="descricao" formControlName="descricao" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="horario" class="form-label">Horario</label>
+              <input type="text" class="form-control" id="horario" name="horario" formControlName="horario"required />
+            </div>
+
+            <div class="mb-3">
+              <label for="local" class="form-label">Local</label>
+              <input type="text" class="form-control" id="local" name="local" formControlName="local" required />
+            </div>
+         
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
+          </form>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+

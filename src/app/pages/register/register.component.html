@@ -1,0 +1,47 @@
+<div class="register-container">
+  <img src="" alt="Logo" class="logo" />
+  <h2>Crie sua conta</h2>
+  <p class="register-link">
+    Já registrado? <a [routerLink]="['/login']">Entre</a> na sua conta
+  </p>
+
+  <form [formGroup]="formRegister" (ngSubmit)="register()">
+    <div class="input-group">
+      <label for="nome">Nome </label>
+      <input id="nome" formControlName="nome" type="text" />
+      <div *ngIf="formRegister.get('nome')?.invalid && formRegister.get('nome')?.touched" class="error">
+        Digite seu nome
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="email">E-mail</label>
+      <input id="email" formControlName="email" type="email" />
+      <div *ngIf="formRegister.get('email')?.invalid && formRegister.get('email')?.touched" class="error">
+        Digite um e-mail valido
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="senha">Senha</label>
+      <input id="senha" formControlName="senha" type="password" />
+       <div *ngIf="formRegister.get('senha')?.invalid && formRegister.get('senha')?.touched" class="error">
+        Digite a senha
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="confirmarSenha">Confirmar Senha</label>
+      <input
+        id="confirmarSenha"
+        formControlName="confirmarSenha"
+        type="password"
+      />
+      <div *ngIf="formRegister.get('confirmarSenha')?.invalid && formRegister.get('confirmarSenha')?.touched" class="error">
+        A confirmação de senha é obrigatoria
+      </div>
+    </div>
+
+    <button type="submit" class="btn-register">Cadastre-se</button>
+  </form>
+</div>

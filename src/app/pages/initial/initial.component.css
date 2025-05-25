@@ -1,0 +1,46 @@
+/* Hero */
+.hero-section {
+  background: linear-gradient(to right, #38b000, #007f5f);
+  height: 100vh;
+  padding-top: 80px;
+  color: white;
+}
+
+/* Seções */
+.section-light {
+  background-color: #f9f9f9;
+  height: 100vh;
+  padding: 80px 0;
+}
+
+.section-light-alt {
+  background-color: #f0fdf4;
+  height: 100vh;
+  padding: 80px 0;
+}
+
+/* Pricing Cards */
+.pricing-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 1rem;
+}
+
+.pricing-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(0, 128, 0, 0.2);
+}
+
+.premium-card {
+  background: #198754 !important; /* Bootstrap 'success' verde */
+  color: white;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .hero-section,
+  .section-light,
+  .section-light-alt {
+    height: auto;
+    padding: 60px 20px;
+  }
+}

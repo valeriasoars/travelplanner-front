@@ -1,17 +1,14 @@
-
-
-
 #wrapper {
   display: flex;
 }
 
 #page-content-wrapper {
-  margin-left: 250px;
-  padding: 20px;
+  margin-left: 70px;
+  padding: 15px;
 }
 
 @media (max-width: 992px) {
   #page-content-wrapper {
-    margin-left: 0;
+    margin-left: 50;
   }
 }

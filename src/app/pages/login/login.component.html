@@ -1,0 +1,42 @@
+<section class="main">
+  <div class="login-container">
+    <img src="logo.png" alt="Logo" class="logo" />
+
+    <h2>Entre em sua conta</h2>
+
+    <p class="register-link">
+      Não tem uma conta? <a [routerLink]="'/register'">Inscreva-se </a>
+    </p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="input-group">
+        <label for="email">E-mail</label>
+        <input id="email" formControlName="email" type="email" />
+        <div
+          *ngIf="
+            loginForm.get('email')?.invalid && loginForm.get('email')?.touched
+          "
+          class="error"
+        >
+          E-mail invalido
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="password">Senha</label>
+        <input id="password" formControlName="senha" type="password" />
+        <div
+          *ngIf="
+            loginForm.get('senha')?.invalid && loginForm.get('senha')?.touched
+          "
+          class="error"
+        >
+          A senha é obrigatoria
+        </div>
+      </div>
+
+      <button type="submit" class="btn-login">Entrar</button>
+    </form>
+  </div>
+</section>
+

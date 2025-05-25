@@ -1,0 +1,80 @@
+
+.custom-navbar {
+  background-color: #17bb1c !important;
+  color: #fff;
+}
+
+#sidebar-wrapper {
+  position: fixed;
+  top: 56px; 
+  left: 0;
+  width: 250px;
+  height: calc(100vh - 56px); 
+  background-color: #e8f5e9; 
+  z-index: 1030;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  transform: translateX(0);
+}
+
+.custom-sidebar {
+  background-color: #e42807;
+  border-right: 1px solid #2c07ff;
+  padding-top: 1rem;
+}
+
+.custom-link {
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  color: #2e7d32;
+}
+
+.custom-link:hover {
+  background-color: #c7ecc7;
+  color: #1b5e20;
+  transform: scale(1.02);
+}
+
+
+#nova-viagem-btn {
+  border-radius: 20px;
+  background-color: #81c784;
+  border: none;
+  color: white;
+  transition: 0.2s ease-in-out;
+}
+
+#nova-viagem-btn:hover {
+  background-color: #66bb6a;
+  transform: scale(1.03);
+}
+
+#page-content-wrapper {
+  margin-left: 0;
+  transition: margin 0.3s ease;
+}
+
+@media (min-width: 992px) {
+  #sidebar-wrapper {
+    transform: translateX(0);
+  }
+
+  #page-content-wrapper {
+    margin-left: 250px;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+}
+
+
+

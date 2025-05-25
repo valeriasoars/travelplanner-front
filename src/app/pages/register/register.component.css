@@ -1,0 +1,176 @@
+.main {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-container {
+  width: 90%;
+  max-width: 400px;
+  min-width: unset;
+  min-height: 500px;
+  padding: 40px 30px;
+  margin: 40px auto;
+  text-align: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.473);
+}
+
+.logo {
+  width: 160px; 
+  display: block;
+  text-align: left;
+  margin-left: 0;
+}
+
+h2 {
+  font-size: 24px; 
+  color: black;
+  font-weight: bold;
+  margin: 20px 0 5px;
+  text-align: left;
+}
+
+.register-link {
+  font-size: 16px; 
+  color: #676161;
+  text-align: left;
+  margin-bottom: 35px;
+}
+
+.register-link a {
+  color:  #135E3D;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 15px;
+  
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100% !important;
+  padding: 10px !important;
+  height: 40px !important;
+  border: 1px solid gray !important;
+  background-color: #6761613a !important;
+  border-radius: 15px !important;
+  font-size: 16px !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+}
+
+
+.btn-register {
+  width: 100%;
+  padding: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  background-color:  #135E3D; 
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.btn-register:hover {
+  background-color: #135e3ebe;
+}
+
+
+.custom-check {
+  display: flex;
+  align-items: center;
+  gap: 6px; 
+  margin-bottom: 0;
+}
+
+.custom-input {
+  accent-color: #f0131325 !important; 
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  background-color: rgb(41, 41, 53);
+}
+
+.custom-label {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+
+@media (max-width: 768px) {
+  .register-container {
+    padding: 30px 20px;
+    margin: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .input-group input {
+    font-size: 16px;
+    height: 40px;
+  }
+
+  .input-group label {
+    font-size: 15px;
+  }
+
+  .register-link {
+    font-size: 14px;
+  }
+
+  .logo {
+    width: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-container {
+    padding: 25px 15px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .register-link {
+    font-size: 13px;
+  }
+
+  .input-group label {
+    font-size: 14px;
+  }
+
+  .input-group input {
+    height: 38px;
+    font-size: 15px;
+  }
+
+  .logo {
+    width: 80px;
+  }
+
+  .btn-register {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

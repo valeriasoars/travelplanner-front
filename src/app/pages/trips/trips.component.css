@@ -1,0 +1,13 @@
+
+
+/* Garante que o dropdown fique acima dos outros elementos */
+.dropdown-menu {
+  z-index: 9999 !important;
+  position: absolute !important;
+}
+
+/* Garante que o container pai permita que o dropdown apareça */
+.card-body {
+  position: relative;
+  overflow: visible !important;
+}
