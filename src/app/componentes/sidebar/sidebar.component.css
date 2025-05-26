@@ -1,8 +1,13 @@
 
 .custom-navbar {
-  background-color: #17bb1c !important;
+  background-color: white !important;
   color: #fff;
+  border-bottom: 1px solid #1a1a1a4f;
+   
 }
+
+
+
 
 #sidebar-wrapper {
   position: fixed;
@@ -10,13 +15,14 @@
   left: 0;
   width: 250px;
   height: calc(100vh - 56px); 
-  background-color: #e8f5e9; 
+  background-color: #a7e2ac9a; 
   z-index: 1030;
   transition: transform 0.3s ease;
   transform: translateX(-100%);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -24,43 +30,61 @@
 }
 
 .custom-sidebar {
-  background-color: #e42807;
-  border-right: 1px solid #2c07ff;
-  padding-top: 1rem;
+  border-right: 1px solid #1a1a1a4f;
+  padding-top: 4rem;
+  
 }
 
 .custom-link {
-  background-color: #ffffff;
+  display: block;
+  padding: 12px 20px;
+ 
   margin-bottom: 10px;
-  border-radius: 10px;
-  transition: all 0.2s ease-in-out;
-  color: #2e7d32;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  color: #1a1a1a;
+  background-color: transparent;
+  transition: all 0.25s ease;
 }
 
 .custom-link:hover {
-  background-color: #c7ecc7;
-  color: #1b5e20;
-  transform: scale(1.02);
+  background-color: #4caf4f9a; 
+  color: white;
+ 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
+.custom-link:active {
+  background-color: #388e3c; /* Verde escuro ao clicar */
+}
+
+.custom-link.text-danger {
+  color: #d32f2f; /* Vermelho mais forte */
+}
+
+.custom-link.text-danger:hover {
+  background-color: #ffcdd2;
+  color: #b71c1c;
+}
 
 #nova-viagem-btn {
   border-radius: 20px;
-  background-color: #81c784;
+  background-color: var(--verde-escuro);
   border: none;
   color: white;
   transition: 0.2s ease-in-out;
 }
 
 #nova-viagem-btn:hover {
-  background-color: #66bb6a;
+  background-color: transparent;
   transform: scale(1.03);
+  border: 2px solid var(--verde-escuro);
+  color: var(--verde-escuro)
 }
 
-#page-content-wrapper {
-  margin-left: 0;
-  transition: margin 0.3s ease;
-}
+
 
 @media (min-width: 992px) {
   #sidebar-wrapper {
@@ -75,6 +99,5 @@
     display: none;
   }
 }
-
 
 

@@ -1,4 +1,9 @@
-
+:root {
+  --verde-principal: #377e90;
+  --verde-escuro: #135e3d;
+  --verde-claro: #b6f7cd;
+  --verde-muito-claro: #f0fdf4;
+}
 
 
 #wrapper {
@@ -15,3 +20,4 @@
     margin-left: 0;
   }
 }
+

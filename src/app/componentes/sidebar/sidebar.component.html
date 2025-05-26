@@ -1,5 +1,5 @@
 <!-- Navbar fixa no topo -->
-<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar ">
   <div class="container-fluid">
     <button class="btn btn-outline-light d-lg-none me-2" id="menu-toggle">☰</button>
     <a class="navbar-brand ms-2" href="#">TravelPlanner</a>
@@ -14,21 +14,20 @@
 
 <!-- Wrapper principal -->
 <div class="d-flex" id="wrapper">
-  <!-- Sidebar sobreposta -->
+
   <div class="sidebar custom-sidebar d-flex flex-column justify-content-between" id="sidebar-wrapper">
     
-    <!-- Parte superior -->
     <div>
-      <div class="list-group list-group-flush px-2">
-        <a class="list-group-item list-group-item-action custom-link" [routerLink]="'/trips'">Viagens</a>
-        <a href="#" class="list-group-item list-group-item-action custom-link">Países</a>
+      <div class="list-group-flush px-2">
+        <a class="list-group-item list-group-item-action custom-link active" [routerLink]="'/trips'">  <i class="bi bi-geo-alt me-2"></i>Viagens</a>
+        <a class="list-group-item list-group-item-action custom-link"> <i class="bi bi-globe-americas me-2"></i>Países</a>
       </div>
     </div>
 
-    <!-- Parte inferior -->
+
     <div class="sidebar-footer px-2 mb-3">
-      <a href="#" class="list-group-item list-group-item-action custom-link">Configurações</a>
-      <a class="list-group-item list-group-item-action custom-link text-danger" (click)="desconect()">Sair</a>
+      <a class="list-group-item list-group-item-action custom-link"> <i class="bi bi-gear me-2"></i>Configurações</a>
+      <a class="list-group-item list-group-item-action custom-link" (click)="desconect()"> <i class="bi bi-box-arrow-right me-2"></i> Sair</a>
     </div>
   </div>
 
@@ -90,4 +89,3 @@
     </div>
   </div>
 </div>
-
