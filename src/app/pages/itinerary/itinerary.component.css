@@ -69,7 +69,8 @@
 
 .btn-atividade{
    border-color: var(--cor-para-botao);
-   color: var(--cor-para-botao);
+   color: white;
+   background-color: var(--cor-para-botao);
 }
 
 button.btn-atividade.btn-sm {
@@ -81,8 +82,8 @@ button.btn-atividade.btn-sm {
 }
 
 button.btn-atividade.btn-sm:hover {
-  background-color: var(--cor-para-botao);
-  color: white;
+  background-color: transparent;
+  color:  var(--cor-para-botao);
   border-color: var(--cor-para-botao);
 }
 
