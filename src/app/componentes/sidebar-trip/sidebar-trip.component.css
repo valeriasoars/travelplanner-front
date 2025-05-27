@@ -1,32 +1,110 @@
-
+/* ------------------ SIDEBAR ------------------ */
 #sidebar-wrapper {
   width: 70px;
   min-height: 100vh;
-  background-color: #e6f4ea;
+  background-color: var(--cor-roxo-escuro);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
 }
 
-.custom-navbar {
-  margin-left: 70px; 
-  height: 100px;
-  z-index: 0; 
+.custom-sidebar {
+  width: 200px;
+  background-color: var(--cor-roxo-escuro);
+  height: 100vh;
+  border-right: 1px solid var(--cor-roxo-escuro);
 }
 
-#page-content-wrapper {
-  margin-left: 100px;
-  padding: 1rem;
+.custom-sidebar .nav-link {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.75rem 0;
+  color: var(--cor-branco);
+  text-align: center;
 }
 
 .sidebar .nav-link i {
   font-size: 1.2rem;
   display: block;
   margin-bottom: 2px;
+  color: var(--cor-branco);
 }
 
-.sidebar .nav-link {
+.custom-sidebar .nav-link:hover,
+.custom-sidebar .nav-link.active {
+  background-color: rgba(230, 230, 230, 0.397);
+}
+
+.custom-sidebar .text-success {
+  color: var(--roxo-principal) !important;
+}
+
+/* ------------------ NAVBAR ------------------ */
+.custom-navbar {
+  background-color: var(--cor-branco);
+  border-bottom: 1px solid var(--cor-roxo-claro);
+  box-shadow: 0 2px 8px rgba(106, 132, 237, 0.1);
+  margin-left: 70px;
+  padding: 0 20px;
+  z-index: 1000;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Estilo dos detalhes da viagem */
+.custom-navbar .trip-details .destino {
+  color: var(--roxo-principal);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.custom-navbar .trip-details .datas {
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* Estilo do orçamento */
+.custom-navbar .orcamento {
+  text-align: right;
+}
+
+.custom-navbar .orcamento .valor {
+  color: var(--cor-para-botao);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.custom-navbar .orcamento .legenda {
+  color: #888;
   font-size: 0.75rem;
-  padding: 0.75rem 0;
+}
+
+
+/* ------------------ CONTEÚDO PRINCIPAL ------------------ */
+#page-content-wrapper {
+  margin-left: 250px;
+  padding: 20px;
+  margin-top: 0px;
+}
+
+/* ------------------- RESPONSIVIDADE ------------------- */
+@media (max-width: 768px) {
+  .custom-navbar .trip-details .destino {
+    font-size: 1.1rem;
+  }
+
+  .custom-navbar .trip-details .datas {
+    font-size: 0.75rem;
+  }
+
+  .custom-navbar .orcamento .valor {
+    font-size: 1rem;
+  }
+
+  .custom-navbar .orcamento .legenda {
+    font-size: 0.7rem;
+  }
 }

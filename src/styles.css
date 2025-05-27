@@ -1,10 +1,17 @@
 :root {
-  --verde-principal: #377e90;
-  --verde-escuro: #135e3d;
-  --verde-claro: #b6f7cd;
-  --verde-muito-claro: #f0fdf4;
+  --roxo-principal: #6a84ed;
+  --cor-fundo: #f1f5fd;
+  --cor-para-botao: #2f97ec;
+  --cor-roxo-claro: #f0ebfd;
+  --cor-roxo-escuro: #9a89e0;
+  --cor-azul-claro: #e9f9f9;
+  --cor-branco: #f1f5fa;
 }
 
+
+body{
+  background-color: var(--cor-fundo);
+}
 
 #wrapper {
   display: flex;
@@ -13,6 +20,7 @@
 #page-content-wrapper {
   margin-left: 250px;
   padding: 20px;
+  margin-top: 50px;
 }
 
 @media (max-width: 992px) {

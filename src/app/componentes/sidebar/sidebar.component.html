@@ -1,8 +1,10 @@
 <!-- Navbar fixa no topo -->
 <nav class="navbar navbar-expand-lg fixed-top custom-navbar ">
+
   <div class="container-fluid">
-    <button class="btn btn-outline-light d-lg-none me-2" id="menu-toggle">☰</button>
-    <a class="navbar-brand ms-2" href="#">TravelPlanner</a>
+    <button class="btn btn-outline-black d-lg-none me-2" id="menu-toggle">☰</button>
+
+     <a class="navbar-brand ms-2">TravelPlanner</a> 
 
     <div class="ms-auto">
       <button type="button" class="btn btn-success fw-bold" id="nova-viagem-btn" data-bs-toggle="modal" data-bs-target="#modalAddTrip">
@@ -17,13 +19,18 @@
 
   <div class="sidebar custom-sidebar d-flex flex-column justify-content-between" id="sidebar-wrapper">
     
-    <div>
-      <div class="list-group-flush px-2">
-        <a class="list-group-item list-group-item-action custom-link active" [routerLink]="'/trips'">  <i class="bi bi-geo-alt me-2"></i>Viagens</a>
-        <a class="list-group-item list-group-item-action custom-link"> <i class="bi bi-globe-americas me-2"></i>Países</a>
-      </div>
+    <div class="text-center py-4 logo-container" style="color: white; font-size: 2rem;">
+      <p> LOGO TRAVEL</p>
     </div>
 
+    <div >
+      <div class="list-group-flush px-2" >
+        <a class="list-group-item list-group-item-action custom-link active" [routerLink]="'/trips'">  <i class="bi bi-geo-alt me-2"></i>Viagens</a>
+        <a class="list-group-item list-group-item-action custom-link active"> <i class="bi bi-globe-americas me-2"></i>Países</a>
+        <a class="list-group-item list-group-item-action custom-link active"> <i class="bi bi-camera-reels me-2"></i>Memorias</a>
+      </div>
+
+      <p style="border-bottom: 1px solid white; margin-bottom: 15px; padding: 10px; margin: 15px;"></p>
 
     <div class="sidebar-footer px-2 mb-3">
       <a class="list-group-item list-group-item-action custom-link"> <i class="bi bi-gear me-2"></i>Configurações</a>

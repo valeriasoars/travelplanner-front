@@ -1,29 +1,142 @@
-#wrapper {
-  display: flex;
-}
-
+/* ==================== Estilo da Seção de Itinerário ==================== */
 #page-content-wrapper {
   margin-top: 50px;
-  margin-left: 70px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 15px;
+  max-width: 80%;
+  width: 100%;
 }
 
-@media (max-width: 992px) {
-  #page-content-wrapper {
-    margin-left: 50;
-  }
+
+
+/* ==================== Estilo do Dia do Itinerário ==================== */
+.itinerary-day {
+  border: 1px solid var(--cor-roxo-claro, #dcd3f3);
+  border-left: 6px solid var(--roxo-principal, #6a84ed);
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(106, 132, 237, 0.05);
+  transition: box-shadow 0.3s ease;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.itinerary-day:hover {
+  box-shadow: 0 4px 16px rgba(106, 132, 237, 0.15);
+}
+
+/* ==================== Cabeçalho Clicável ==================== */
+.itinerary-header {
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.733);
+  font-weight: 600;
+  padding: 8px 0;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 }
 
 .toggle-icon {
+  font-size: 1.2rem;
   transition: transform 0.3s ease;
+  color: #555;
 }
 
-.itinerary-header.collapsed .toggle-icon {
-  transform: rotate(0deg);
-}
-
-.itinerary-header[aria-expanded="true"] .toggle-icon,
-.itinerary-header.show .toggle-icon {
+.itinerary-header[aria-expanded="true"] .toggle-icon {
   transform: rotate(180deg);
 }
 
+/* ==================== Lista de Atividades ==================== */
+.list-group-item {
+  border: none;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  font-size: 0.95rem;
+}
+
+.list-group-item strong {
+  color: rgba(0, 0, 0, 0.733);
+}
+
+.list-group-item small {
+  color: #888;
+}
+
+/* ==================== Botão Adicionar Atividade ==================== */
+
+.btn-atividade{
+   border-color: var(--cor-para-botao);
+   color: var(--cor-para-botao);
+}
+
+button.btn-atividade.btn-sm {
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  padding: 6px 12px;
+}
+
+button.btn-atividade.btn-sm:hover {
+  background-color: var(--cor-para-botao);
+  color: white;
+  border-color: var(--cor-para-botao);
+}
+
+/* ==================== Modal ==================== */
+.modal-dialog.modal-dialog-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 0;
+  height: 100%;
+  max-width: 400px;
+  width: 100%;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.modal.fade.show .modal-dialog.modal-dialog-right {
+  transform: translateX(0);
+}
+
+.modal-dialog.modal-dialog-right .modal-content {
+  height: 100%;
+  border-radius: 0;
+  border-left: 1px solid #dee2e6;
+}
+
+/* ==================== Responsividade ==================== */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -240px;
+    width: 240px;
+    top: 0;
+    height: 100%;
+    background-color: #a98ee4;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+
+  .menu-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #6a84ed;
+    z-index: 1100;
+  }
+
+  #page-content-wrapper {
+    margin-left: 55px !important;
+    padding: 15px;
+    max-width: 90%;
+  }
+}

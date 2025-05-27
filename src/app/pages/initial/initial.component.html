@@ -1,162 +1,26 @@
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#inicio">
-      <i class="fas fa-map-marked-alt me-2"></i>TravelPlanner
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<section class="container-inicial">
+  <header class="navbar navbar-expand-lg bg-white rounded shadow px-4 py-2 mx-auto" style="max-width: 1000px;">
+    <a class="navbar-brand fw-bold " href="#">TravelPlanner</a>
+
+    <!-- Botão Hamburguer -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+      aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav align-items-center">
-        <li class="nav-item"><a class="nav-link mx-2" href="#inicio">Início</a></li>
-        <li class="nav-item"><a class="nav-link mx-2" href="#recursos">Recursos</a></li>
-        <li class="nav-item"><a class="nav-link mx-2" href="#sobre">Sobre</a></li>
-        <li class="nav-item"><a class="nav-link mx-2" href="#precos">Preços</a></li>
-        <li class="nav-item"><a class="nav-link mx-2" [routerLink]="'/login'">Login</a></li>
+
+    <!-- Menu Responsivo -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
+      <ul class="navbar-nav gap-3">
         <li class="nav-item">
-          <a class="btn btn-success ms-2 px-4 rounded-pill" [routerLink]="'/register'">Cadastre-se</a>
+          <a class="nav-link  fw-medium" href="#">O que é o TravelPlanner?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  fw-medium" [routerLink]="['/login']">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn register" [routerLink]="['/register']">Começar agora</a>
         </li>
       </ul>
     </div>
-  </div>
-</nav>
-
-<!-- Hero -->
-<section id="inicio" class="hero-section d-flex align-items-center justify-content-center text-center">
-  <div class="container position-relative">
-    <div class="row align-items-center">
-      <div class="col-lg-6 text-lg-start">
-        <h1 class="display-3 fw-bold mb-3">Transforme seus sonhos de viagem em realidade</h1>
-        <p class="lead mb-4">
-          Planeje, organize e viva experiências inesquecíveis ao redor do mundo. O TravelPlanner é sua ferramenta completa para criar itinerários perfeitos.
-        </p>
-        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-lg-start justify-content-center">
-          <a class="btn btn-light text-success btn-lg rounded-pill px-5 shadow-sm" [routerLink]="'/register'">
-            <i class="fas fa-rocket me-1"></i>Comece agora
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-6 mt-5 mt-lg-0 text-center">
-        <i class="fas fa-globe-americas" style="font-size: 15rem; opacity: 0.3;"></i>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Recursos -->
-<section id="recursos" class="section-white">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold mb-4">Recursos que tornam suas viagens extraordinárias</h2>
-      <p class="text-muted mx-auto" style="max-width: 600px;">
-        Descubra ferramentas inteligentes que simplificam cada etapa do seu planejamento de viagem
-      </p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-4">
-        <div class="feature-card text-center">
-          <div class="feature-icon mx-auto"><i class="fas fa-calculator"></i></div>
-          <h5 class="fw-bold mb-3">Controle de Orçamento</h5>
-          <p class="text-muted">Monitore todos os gastos da viagem e mantenha seu orçamento sempre sob controle.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="feature-card text-center">
-          <div class="feature-icon mx-auto"><i class="fas fa-camera"></i></div>
-          <h5 class="fw-bold mb-3">Diário de Viagem</h5>
-          <p class="text-muted">Registre momentos especiais, fotos e memórias para criar um álbum digital das suas aventuras.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="feature-card text-center">
-          <div class="feature-icon mx-auto"><i class="fas fa-users"></i></div>
-          <h5 class="fw-bold mb-3">Viagens em Grupo</h5>
-          <p class="text-muted">Colabore com amigos e família no planejamento, dividindo tarefas e compartilhando informações.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Sobre -->
-<section id="sobre" class="section-light">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <h2 class="fw-bold mb-4">Por que escolher o TravelPlanner?</h2>
-        <p class="text-muted mb-4">
-          Nascemos da paixão por viagens e da necessidade de tornar o planejamento mais simples e eficiente. 
-          Nossa plataforma combina tecnologia avançada com a experiência de milhares de viajantes para oferecer 
-          a melhor ferramenta de planejamento do mercado.
-        </p>
-      </div>
-      <div class="col-lg-6 mt-5 mt-lg-0 text-center">
-        <i class="fas fa-map text-success" style="font-size: 12rem; opacity: 0.1;"></i>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Preços -->
-<section id="precos" class="section-light-alt">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold mb-4">Planos para todos os estilos de viagem</h2>
-      <p class="text-muted">Escolha o plano ideal para suas aventuras</p>
-    </div>
-    <div class="row justify-content-center g-4">
-      <!-- Gratuito -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card pricing-card shadow p-4">
-          <div class="card-body text-center">
-            <h5 class="card-title fw-bold mb-3">Explorador</h5>
-            <p class="text-muted mb-4">Perfeito para começar sua jornada</p>
-            <div class="mb-4">
-              <span class="display-4 fw-bold text-success">R$ 0</span>
-              <small class="text-muted">/mês</small>
-            </div>
-            <ul class="list-unstyled text-start mb-4">
-              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>1 viagem ativa</li>
-              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Planejamento básico</li>
-              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Controle de orçamento</li>
-              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Diário de viagem</li>
-              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Controle de orçamento</li>
-              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Diário de viagem</li>
-            </ul>
-            <a class="btn btn-outline-success w-100 rounded-pill" [routerLink]="'/register'">Começar grátis</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Premium -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card pricing-card premium-card shadow-lg p-4">
-          <div class="card-body text-center">
-            <h5 class="card-title fw-bold mb-3">Aventureiro Premium</h5>
-            <p class="text-white-50 mb-4">Para quem quer o máximo da experiência</p>
-            <div class="mb-4">
-              <span class="display-4 fw-bold">R$ 150</span>
-              <small>/ano</small>
-            </div>
-            <ul class="list-unstyled text-start mb-4">
-              <li class="mb-2"><i class="fas fa-check me-2"></i>Viagens ilimitadas</li>
-              <li class="mb-2"><i class="fas fa-check me-2"></i>Suporte prioritário</li>
-              <li class="mb-2"><i class="fas fa-check me-2"></i>Viagens ilimitadas</li>
-              <li class="mb-2"><i class="fas fa-check me-2"></i>Suporte prioritário</li>
-              <li class="mb-2"><i class="fas fa-check me-2"></i>Viagens ilimitadas</li>
-              <li class="mb-2"><i class="fas fa-check me-2"></i>Suporte prioritário</li>
-            </ul>
-            <a class="btn btn-light w-100 rounded-pill" [routerLink]="'/register'">Assinar Premium</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="text-center mt-4">
-      <p class="text-muted">
-        <i class="fas fa-shield-alt text-success me-1"></i>
-        Garantia de 30 dias ou seu dinheiro de volta
-      </p>
-    </div>
-  </div>
+  </header>
 </section>

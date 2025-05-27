@@ -5,6 +5,7 @@ import { LoginModel } from '../../models/loginModel';
 import { Observable } from 'rxjs';
 import { ResponseModel } from '../../models/responseModel';
 import { RegisterModel } from '../../models/registerModel';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class AuthService {
 
   apiUrl = environment.urlApi
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router:Router) { }
 
   login(login: LoginModel): Observable<ResponseModel<LoginModel>>{
     return this.http.post<ResponseModel<LoginModel>>(`${this.apiUrl}/usuario/logar`, login)
@@ -25,5 +26,6 @@ export class AuthService {
 
   sair(){
     localStorage.removeItem('token')
+    this.router.navigate(['/']);
   }
 }

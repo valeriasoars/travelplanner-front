@@ -1,8 +1,13 @@
 import { Component, LOCALE_ID } from '@angular/core';
-import { SidebarTripComponent } from "../../componentes/sidebar-trip/sidebar-trip.component";
+import { SidebarTripComponent } from '../../componentes/sidebar-trip/sidebar-trip.component';
 import { ViagemModel } from '../../models/viagemModel';
 import { PlanejamentoDiarioModel } from '../../models/planejamentoDiarioModel';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { AtividadeModel } from '../../models/atividadeModel';
 import { TripService } from '../../service/trip/trip.service';
@@ -10,105 +15,120 @@ import { DaysService } from '../../service/days/days.service';
 import { ActivityService } from '../../service/activity/activity.service';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { ToastrService } from 'ngx-toastr';
 
 registerLocaleData(localePt);
 @Component({
   selector: 'app-itinerary',
   standalone: true,
-  imports: [ SidebarTripComponent, ReactiveFormsModule, CommonModule],
+  imports: [SidebarTripComponent, ReactiveFormsModule, CommonModule],
   templateUrl: './itinerary.component.html',
   styleUrl: './itinerary.component.css',
-  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }] 
+  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
 })
 export class ItineraryComponent {
- tripId!: string
-  trip!: ViagemModel
-  days: PlanejamentoDiarioModel[] = []
+  tripId!: string;
+  trip!: ViagemModel;
+  days: PlanejamentoDiarioModel[] = [];
 
-  activityForm!: FormGroup
-  selectedDayId!: string
-  activities: AtividadeModel[] = []
-  openDays: boolean[] = []
+  activityForm!: FormGroup;
+  selectedDayId!: string;
+  activities: AtividadeModel[] = [];
+  openDays: boolean[] = [];
 
-  constructor(private route: ActivatedRoute, private tripService: TripService, private daysService: DaysService, private activityService: ActivityService, private fb: FormBuilder){}
+  constructor(
+    private route: ActivatedRoute,
+    private tripService: TripService,
+    private daysService: DaysService,
+    private activityService: ActivityService,
+    private fb: FormBuilder,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
-    this.tripId = this.route.snapshot.paramMap.get('id')!
-    
-    this.tripService.getTripById(this.tripId).subscribe({
-      next: (response) => this.trip = response.viagem,
-      error: (err) => console.error('erro', err)
-    })
+    this.tripId = this.route.snapshot.paramMap.get('id')!;
 
-      this.daysService.getDaysByTrip(this.tripId).subscribe({
-        next: (response) => {
+    this.tripService.getTripById(this.tripId).subscribe({
+      next: (response) => (this.trip = response.viagem),
+      error: (err) => console.error('erro', err),
+    });
+
+    this.daysService.getDaysByTrip(this.tripId).subscribe({
+      next: (response) => {
         this.days = response.dados.map((d: any) => ({
           ...d,
-          data: this.normalizeDate(d.data) 
-        }))
+          data: this.normalizeDate(d.data),
+        }));
 
-        
-        this.days.forEach(day => {
+        this.days.forEach((day) => {
           this.getActivity(day._id);
         });
+      },
+      error: (err) => console.error('Erro ao carregar dias', err),
+    });
 
-        },
-        error: (err) => console.error('Erro ao carregar dias', err)
-      })
-
-      this.formsActivity()
+    this.formsActivity();
   }
 
-  formsActivity(){
+  formsActivity() {
     this.activityForm = this.fb.group({
-        atividade:['', [Validators.required]],
-        descricao:['', [Validators.required]],
-        horario:['', [Validators.required]],
-        local:['', [Validators.required]]
-    })
+      atividade: ['', [Validators.required]],
+      descricao: ['', [Validators.required]],
+      horario: ['', [Validators.required]],
+      local: ['', [Validators.required]],
+    });
   }
 
   setSelectedDay(dayId: string) {
-    this.selectedDayId = dayId
+    this.selectedDayId = dayId;
   }
 
-  getActivity(id: string){
+  getActivity(id: string) {
     this.activityService.getActivityByPlannerId(id).subscribe({
       next: (response) => {
-        console.log('Atividades recebidas:', response.dados)
+        console.log('Atividades recebidas:', response.dados);
 
-        this.activities = this.activities.filter(a => a.planejamentoId !== id);
+        this.activities = this.activities.filter(
+          (a) => a.planejamentoId !== id
+        );
         this.activities.push(...response.dados);
       },
       error: (err) => {
-        console.error('Erro ao buscar atividades:', err)
-      }
-
-    })
+        console.error('Erro ao buscar atividades:', err);
+      },
+    });
   }
 
   getActivitiesByDay(dayId: string): AtividadeModel[] {
-    return this.activities.filter(activity => activity.planejamentoId === dayId);
+    return this.activities.filter(
+      (activity) => activity.planejamentoId === dayId
+    );
   }
 
-  addActivity(){
-    if(this.activityForm.invalid || !this.selectedDayId) return
+  addActivity() {
+    if (this.activityForm.invalid || !this.selectedDayId) return;
 
-    const newActivity = this.activityForm.value
+    const newActivity = this.activityForm.value;
 
-    this.activityService.addActivity(this.selectedDayId, newActivity).subscribe({
-      next:(response) => {
-        console.log('Atividade adicionada:', response)
-        this.activityForm.reset()
-      },
-      error: (err) => {
-        console.error('Erro ao adicionar atividade:', err)
-      }
-    })
+    this.activityService
+      .addActivity(this.selectedDayId, newActivity)
+      .subscribe({
+        next: (response) => {
+          this.toastr.success('Atividade criada com sucesso');
+          this.activityForm.reset();
+        },
+        error: (err) => {
+        const erro = err.error?.erro;
+
+        if (erro) {
+          this.toastr.error(erro);
+        } else {
+          this.toastr.error('Erro ao adicionar atividade. Tente novamente.');
+        }
+        console.error('Erro da API:', err);
+        }
+      });
   }
-
-
-
 
   normalizeDate(dateStr: string): Date {
     const dateOnly = dateStr.split('T')[0]; // Pega apenas a parte da data (YYYY-MM-DD)

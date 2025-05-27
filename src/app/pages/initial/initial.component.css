@@ -1,137 +1,29 @@
-/* Hero */
-.hero-section {
-  background: var(--verde-escuro);
-  min-height: 100vh;
-  padding-top: 80px;
-  color: white;
-  position: relative;
-  overflow: hidden;
+
+.container-inicial {
+  padding: 10px;
 }
 
-.hero-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  animation: float 20s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-/* Seções */
-.section-light {
-  background-color: #fafafa;
-  padding: 80px 0;
-}
-
-.section-light-alt {
-  background-color: var(--verde-muito-claro);
-  padding: 80px 0;
-}
-
-.section-white {
-  background-color: white;
-  padding: 80px 0;
-}
-
-/* Cards de recursos */
-.feature-card {
-  background: white;
-  border-radius: 1rem;
-  padding: 2rem;
+.register {
+  background-color: var( --roxo-principal);
+  padding: 10px 20px;
+  border-radius: 15px;
+  color: white !important;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(34, 197, 94, 0.15);
-}
-
-.feature-icon {
-  width: 60px;
-  height: 60px;
-  background: var(--verde-claro);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  color: var(--verde-escuro);
-  font-size: 1.5rem;
-}
-
-/* Pricing Cards */
-.pricing-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 1rem;
-  border: none;
-  height: 100%;
-}
-
-.pricing-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(34, 197, 94, 0.2);
-}
-
-.premium-card {
-  background: linear-gradient(
-    135deg,
-    var(--verde-principal) 0%,
-    var(--verde-escuro) 100%
-  );
-  color: white;
-  position: relative;
-  overflow: hidden;
+ ul li a:hover {
+  color: var( --roxo-principal);
+  transform: scale(1.05);
 }
 
 
-
-/* Navbar customizada */
-.navbar-brand {
-  color: var(--verde-principal) !important;
-  font-size: 1.8rem !important;
+.register:hover {
+  background-color: var( --roxo-principal);
+  transform: scale(1.05);
+  color: white !important;
 }
 
-.btn-success {
-  background-color: var(--verde-principal);
-  border-color: var(--verde-principal);
-}
-
-.btn-success:hover {
-  background-color: var(--verde-escuro);
-  border-color: var(--verde-escuro);
-}
-
-.text-success {
-  color: var(--verde-principal) !important;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .hero-section {
-    padding: 60px 20px;
-    min-height: 80vh;
-  }
-
-  .section-light,
-  .section-light-alt,
-  .section-white {
-    padding: 60px 0;
-  }
-
-  .stat-number {
-    font-size: 2rem;
-  }
-}

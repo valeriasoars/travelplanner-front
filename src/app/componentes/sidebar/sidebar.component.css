@@ -1,27 +1,28 @@
-
-.custom-navbar {
-  background-color: white !important;
-  color: #fff;
-  border-bottom: 1px solid #1a1a1a4f;
-   
-}
-
-
-
-
+/* Sidebar fixa à esquerda */
 #sidebar-wrapper {
   position: fixed;
-  top: 56px; 
+  top: 0;
   left: 0;
   width: 250px;
-  height: calc(100vh - 56px); 
-  background-color: #a7e2ac9a; 
+  height: 100vh;
+  background-color: var(--roxo-principal);
   z-index: 1030;
   transition: transform 0.3s ease;
   transform: translateX(-100%);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+}
+
+.logo-container {
+  width: 100%;
+}
+
+.logo-img {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 
 }
 
@@ -31,64 +32,28 @@
 
 .custom-sidebar {
   border-right: 1px solid #1a1a1a4f;
-  padding-top: 4rem;
-  
 }
 
-.custom-link {
-  display: block;
-  padding: 12px 20px;
- 
-  margin-bottom: 10px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 16px;
-  color: #1a1a1a;
-  background-color: transparent;
-  transition: all 0.25s ease;
+/* Navbar fixa no topo */
+.custom-navbar {
+  background-color: var(--cor-fundo) !important;
+  color: #fff;
+  border-bottom: 1px solid #1a1a1a25;
+  width: 100%;
+  margin-left: 0;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+  z-index: 1050;
 }
 
-.custom-link:hover {
-  background-color: #4caf4f9a; 
-  color: white;
- 
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.custom-link:active {
-  background-color: #388e3c; /* Verde escuro ao clicar */
-}
-
-.custom-link.text-danger {
-  color: #d32f2f; /* Vermelho mais forte */
-}
-
-.custom-link.text-danger:hover {
-  background-color: #ffcdd2;
-  color: #b71c1c;
-}
-
-#nova-viagem-btn {
-  border-radius: 20px;
-  background-color: var(--verde-escuro);
-  border: none;
-  color: white;
-  transition: 0.2s ease-in-out;
-}
-
-#nova-viagem-btn:hover {
-  background-color: transparent;
-  transform: scale(1.03);
-  border: 2px solid var(--verde-escuro);
-  color: var(--verde-escuro)
-}
-
-
-
+/* Quando a sidebar está visível em telas grandes */
 @media (min-width: 992px) {
   #sidebar-wrapper {
     transform: translateX(0);
+  }
+
+  .custom-navbar {
+    width: calc(100% - 250px);
+    margin-left: 250px;
   }
 
   #page-content-wrapper {
@@ -98,6 +63,139 @@
   #menu-toggle {
     display: none;
   }
+}
+
+/* Link padrão do menu */
+.custom-link {
+  display: block;
+  padding: 12px 20px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--cor-branco);
+  background-color: transparent;
+  transition: all 0.25s ease;
+
+
+}
+
+.custom-link:hover {
+  background-color: rgba(230, 230, 230, 0.397);
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.custom-link:active {
+   background-color: rgba(230, 230, 230, 0.397);
+}
+
+
+/* Botão de nova viagem */
+#nova-viagem-btn {
+  border-radius: 20px;
+  background-color: var(--cor-para-botao);
+  border: none;
+  color: white;
+}
+
+#nova-viagem-btn:hover {
+  background-color: transparent;
+  border: 2px solid var(--cor-para-botao);
+  color: var(--cor-para-botao);
+}
+
+/* Estilo do container principal */
+#page-content-wrapper {
+  flex-grow: 1;
+  padding: 1rem;
+  transition: margin-left 0.3s ease;
+
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+
+/* Estilo da Modal */
+.modal-content {
+  background-color: var(--cor-fundo);
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  background-color: var(--roxo-principal);
+  color: white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  padding: 1rem 1.5rem;
+}
+
+.modal-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.btn-close {
+  filter: invert(1); 
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+/* Formulários */
+.form-label {
+  color: #333;
+  font-weight: 500;
+}
+
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: var(--cor-branco);
+}
+
+.form-control:focus {
+  border-color: var(--roxo-principal);
+  box-shadow: 0 0 0 0.2rem rgba(106, 132, 237, 0.25);
+}
+
+
+/* Botões */
+.btn-secondary {
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+}
+
+.btn-secondary:hover {
+  background-color: #bbb;
+}
+
+.btn-primary {
+  background-color: var(--cor-para-botao);
+  border: none;
+  color: white;
+  border-radius: 20px;
+  padding: 8px 16px;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--cor-para-botao);
+  border: 2px solid var(--cor-para-botao);
 }
 
 

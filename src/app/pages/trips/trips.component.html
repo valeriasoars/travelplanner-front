@@ -1,38 +1,112 @@
 <app-sidebar></app-sidebar>
 
 <div id="page-content-wrapper" class="flex-grow-1 p-4">
-
-<div class="stats-container text-center my-2">
-  <div class="stats-text">Planeje suas viagens</div>
-</div>
-
-  <!-- Card de viagem -->
-  <div *ngFor="let trip of trips" class="card shadow-sm border-0 mb-4" style="border-radius: 15px;">
-    <div class="card-body d-flex justify-content-between align-items-center bg-light-subtle border-start border-success border-4">
-
-
-      <div style="cursor: pointer;">
-        <h5 class="card-title text-success fw-bold mb-1">{{trip.destino}}</h5>
-        <p class="card-text text-muted mb-0">{{ trip.dataInicio | date: 'dd/MM/yyyy' : 'UTC' }} - {{ trip.dataFim | date: 'dd/MM/yyyy' : 'UTC'}} </p>
-
-          <button class="btn btn-success btn-sm mt-2" (click)="goToPlanner(trip._id)">
-            Começar a Planejar
-          </button>
-      </div>
-
-
-      <div class="dropdown" >
-        <button class="btn btn-link text-success" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="bi bi-three-dots-vertical fs-4"></i>
+  <div class="container-viagens rounded p-4">
+    <!-- Abas de navegação -->
+    <ul class="nav nav-tabs custom-tabs mb-4" id="tripTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link active"
+          id="planejamento-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#planejamento"
+          type="button"
+          role="tab"
+        >
+          Viagens em planejamento
         </button>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="#"><i class="bi bi-pencil-square me-2"></i>Editar</a></li>
-          <li><a class="dropdown-item text-danger" (click)="deleteTrip(trip._id)"><i class="bi bi-trash me-2" ></i>Deletar</a></li>
-        </ul>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="concluidas-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#concluidas"
+          type="button"
+          role="tab"
+        >
+          Concluídas
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="canceladas-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#canceladas"
+          type="button"
+          role="tab"
+        >
+          Canceladas
+        </button>
+      </li>
+    </ul>
+
+    <!-- Conteúdo das abas -->
+    <div class="tab-content" id="tripTabsContent">
+      <!-- Aba: Planejamento -->
+      <div class="tab-pane fade show active" id="planejamento" role="tabpanel" >
+        <div
+          *ngFor="let trip of trips"
+          class="card shadow-sm border-0 mb-4"
+          style="border-radius: 15px"
+        >
+          <div 
+            class="card-body d-flex justify-content-between align-items-center bg-light-subtle border-start border-4" 
+          >
+            <div style="cursor: pointer"  >
+              <h5 class="card-title  fw-bold mb-1">
+                {{ trip.destino }}
+              </h5>
+              <p class="card-text text-muted mb-0">
+                {{ trip.dataInicio | date : "dd/MM/yyyy" : "UTC" }} -
+                {{ trip.dataFim | date : "dd/MM/yyyy" : "UTC" }}
+              </p>
+
+             <button class="btn btn-outline-secondary btn-sm mt-2" (click)="goToPlanner(trip._id)">
+                <i class="bi bi-box-arrow-in-right me-1"></i> Planejar
+             </button>
+            </div>
+
+            <div class="dropdown">
+              <button
+                class="btn btn-link"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-three-dots-vertical fs-4"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-pencil-square me-2"></i>Editar</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item text-danger"
+                    (click)="deleteTrip(trip._id)"
+                    ><i class="bi bi-trash me-2"></i>Deletar</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba: Concluídas -->
+        <div class="tab-pane fade" id="concluidas" role="tabpanel">
+          <p class="text-muted">Lista de viagens concluídas.</p>
+          <!-- *ngFor com tripsConcluidas -->
+        </div>
+
+        <!-- Aba: Canceladas -->
+        <div class="tab-pane fade" id="canceladas" role="tabpanel">
+          <p class="text-muted">Lista de viagens canceladas.</p>
+          <!-- *ngFor com tripsCanceladas -->
+        </div>
       </div>
     </div>
   </div>
-
-
-
 </div>

@@ -1,16 +1,16 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top custom-navbar bg-white border-bottom shadow-sm" >
-  <div *ngIf="trip" class="container-fluid align-items-center">
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+  <div *ngIf="trip" class="container-fluid d-flex justify-content-between align-items-center px-4 py-2">
     <!-- Detalhes da viagem -->
-    <div class="d-flex flex-column">
-      <span class="fw-bold text-success fs-5">{{trip.destino}}</span>
-      <small class="text-muted">{{ trip.dataInicio | date:'dd/MM/yyyy' : 'UTC' }} - {{ trip.dataFim | date:'dd/MM/yyyy' : 'UTC'}}</small>
+    <div class="trip-details d-flex flex-column">
+      <span class="destino">{{ trip.destino }}</span>
+      <small class="datas">{{ trip.dataInicio | date:'dd/MM/yyyy' : 'UTC' }} - {{ trip.dataFim | date:'dd/MM/yyyy' : 'UTC' }}</small>
     </div>
 
     <!-- Orçamento -->
-    <div class="ms-auto text-end">
-      <span class="fw-bold text-success">R$ {{trip.orcamentoTotal}}</span><br />
-      <small class="text-muted">Orçamento total</small>
+    <div class="orcamento text-end">
+      <span class="valor">R$ {{ trip.orcamentoTotal }}</span><br />
+      <small class="legenda">Orçamento total</small>
     </div>
   </div>
 </nav>
@@ -20,15 +20,16 @@
 <!-- Sidebar -->
 <div class="sidebar custom-sidebar d-flex flex-column justify-content-between align-items-center py-4" id="sidebar-wrapper">
   <!-- Logo -->
-  <div class="text-success text-center mb-4 fw-bold small">Travel</div>
+  <div class="text-center fw-bold mb-5 small" style="color: white; font-size: 2rem; ">T|P</div>
+
 
   <!-- Itens principais -->
   <div class="nav flex-column text-center w-100">
-    <a class="nav-link text-success" title="Itinerário" [routerLink]="['/itinerary', trip?._id]">
+    <a class="nav-link" title="Itinerário" [routerLink]="['/itinerary', trip?._id]">
       <i class="bi bi-map"></i>
       <div class="small">Itinerário</div>
     </a>
-    <a  class="nav-link text-success" title="Orçamento" [routerLink]="['/budget', trip?._id]">
+    <a  class="nav-link" title="Orçamento" [routerLink]="['/budget', trip?._id]">
       <i class="bi bi-cash-coin"></i>
       <div class="small">Orçamento</div>
     </a>
@@ -36,11 +37,11 @@
 
   <!-- Rodapé fixo -->
   <div class="nav flex-column text-center w-100 mt-auto">
-    <a href="#" class="nav-link text-muted">
+    <a class="nav-link ">
       <i class="bi bi-gear"></i>
       <div class="small">Config</div>
     </a>
-    <a class="nav-link text-danger">
+    <a class="nav-link">
       <i class="bi bi-box-arrow-right"></i>
       <div class="small" (click)="desconect()">Sair</div>
     </a>

@@ -16,6 +16,7 @@ export class TripsComponent implements OnInit {
 
   tripId!: string;
   trips: ViagemModel[] = []
+  
 
   constructor(private router: Router, private tripService: TripService) {}
 

@@ -4,11 +4,12 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../service/auth/auth.service';
 import { ToastrService } from 'ngx-toastr';
+import { InitialComponent } from "../initial/initial.component";
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [RouterLink, ReactiveFormsModule, CommonModule],
+  imports: [RouterLink, ReactiveFormsModule, CommonModule, InitialComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })

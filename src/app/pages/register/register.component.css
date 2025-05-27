@@ -43,7 +43,7 @@ h2 {
 }
 
 .register-link a {
-  color:  #135E3D;
+  color:  var(--roxo-principal);
   font-weight: bold;
   cursor: pointer;
 }
@@ -79,7 +79,7 @@ h2 {
   padding: 10px;
   font-size: 17px;
   font-weight: bold;
-  background-color:  #135E3D; 
+  background-color:  var(--roxo-principal); 
   color: #fff;
   border: none;
   border-radius: 15px;
@@ -89,7 +89,7 @@ h2 {
 }
 
 .btn-register:hover {
-  background-color: #135e3ebe;
+  background-color: var(--roxo-principal);
 }
 
 
