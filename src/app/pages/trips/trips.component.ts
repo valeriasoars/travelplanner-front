@@ -46,6 +46,6 @@ export class TripsComponent implements OnInit {
   }
 
   goToPlanner(tripId: string) {
-    this.router.navigate(['/planner', tripId]);
+    this.router.navigate(['/itinerary', tripId]);
   }
 }

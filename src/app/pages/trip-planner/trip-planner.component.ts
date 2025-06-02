@@ -10,13 +10,14 @@ import localePt from '@angular/common/locales/pt';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivityService } from '../../service/activity/activity.service';
 import { AtividadeModel } from '../../models/atividadeModel';
+import { ItineraryComponent } from "../itinerary/itinerary.component";
 
 registerLocaleData(localePt);
 
 @Component({
   selector: 'app-trip-planner',
   standalone: true,
-  imports: [SidebarTripComponent, CommonModule, ReactiveFormsModule],
+  imports: [SidebarTripComponent, CommonModule, ReactiveFormsModule, ItineraryComponent],
   templateUrl: './trip-planner.component.html',
   styleUrl: './trip-planner.component.css',
   providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }] 
