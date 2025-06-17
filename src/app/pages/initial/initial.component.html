@@ -1,26 +1,74 @@
-<section class="container-inicial">
-  <header class="navbar navbar-expand-lg bg-white rounded shadow px-4 py-2 mx-auto" style="max-width: 1000px;">
-    <a class="navbar-brand fw-bold " href="#">TravelPlanner</a>
+<section class="sec-1">
+    <app-nav-bar></app-nav-bar> 
 
-    <!-- Botão Hamburguer -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
-      aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Menu Responsivo -->
-    <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
-      <ul class="navbar-nav gap-3">
-        <li class="nav-item">
-          <a class="nav-link  fw-medium" href="#">O que é o TravelPlanner?</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link  fw-medium" [routerLink]="['/login']">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="btn register" [routerLink]="['/register']">Começar agora</a>
-        </li>
-      </ul>
+    <div class="box-header">
+        <div class="box-header-text">
+            <h1>Organize e Planeje suas Viagens de Forma Fácil</h1>
+            <p>Oferecemos uma plataforma completa para você planejar cada detalhe da sua viagem, desde a escolha dos destinos até a organização do roteiro e orçamentos.</p>
+            <button class="btn">Começar a planejar</button>
+        </div>
     </div>
-  </header>
 </section>
+
+<section class="sec-imagem">
+    <img src="https://www.pontotel.com.br/local/wp-content/uploads/2023/08/sistema-de-informacao.webp" alt="">
+</section>
+
+<section class="sec-2 container d-flex flex-column justify-content-center">
+  <div class="sec-2-descricao mb-4 text-start">
+    <h3 class="fw-bold">Mais organização nas suas viagens</h3>
+    <p class="text-muted">Gerencie e visualize seus compromissos de forma prática e eficiente.</p>
+  </div>
+
+  <div class="sec-2-funcionalidades w-100">
+    <div class="box-funcionalidades d-flex justify-content-start flex-wrap gap-4">
+      <div class="card-func bg-white shadow rounded p-4 text-start">
+        <i class="bi bi-calendar-week fs-1 text-primary mb-3 d-block"></i>
+        <h5 class="fw-semibold">Visualização Semanal</h5>
+        <p class="text-muted">Multiplos formatos de visualização: semanal, diária e geral.</p>
+      </div>
+      <div class="card-func bg-white shadow rounded p-4 text-start">
+        <i class="bi bi-clock-history fs-1 text-primary mb-3 d-block"></i>
+        <h5 class="fw-semibold">Controle de Horários</h5>
+        <p class="text-muted">Organize sua agenda e evite contratempos.</p>
+      </div>
+      <div class="card-func bg-white shadow rounded p-4 text-start">
+        <i class="bi bi-geo-alt fs-1 text-primary mb-3 d-block"></i>
+        <h5 class="fw-semibold">Mapeamento de Destinos</h5>
+        <p class="text-muted">Visualize rotas e locais de forma integrada.</p>
+      </div>
+            <div class="card-func bg-white shadow rounded p-4 text-start">
+        <i class="bi bi-geo-alt fs-1 text-primary mb-3 d-block"></i>
+        <h5 class="fw-semibold">Mapeamento de Destinos</h5>
+        <p class="text-muted">Visualize rotas e locais de forma integrada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="sec-3">
+    <div>
+        <img src="https://static.vecteezy.com/ti/fotos-gratis/p2/14391233-mao-de-mulher-desenhando-no-mapa-de-viagens-planejando-viagem-ou-ferias-foto.jpg" alt="Imagem de viagem" style="width: 100%; max-width: 400px; border-radius: 10px;">
+    </div>
+
+    <div>
+        <h4>Sua Jornada Começa Aqui: Planeje Aventuras Inesquecíveis!</h4>
+        <p>Com nosso sistema, você tem todas as ferramentas para transformar seus sonhos de viagem em realidade. Descubra como é fácil e divertido planejar cada passo, do primeiro clique à chegada ao seu destino.</p>
+        <ul>
+            <li>Criação de roteiros personalizados</li>
+            <li>Controle financeiro detalhado</li>
+            <li>Adicionar fotos para guardar as lembranças para sempre</li>
+            <li>Compartilhamento de planos com amigos</li>
+        </ul>
+        <button>Começar a planejar </button>
+    </div>
+</section>
+
+<footer>
+      <h1>PlanejeViagem</h1>
+      <p>&copy; 2025 PlanejeViagem. Todos os direitos reservados.</p>
+</footer>

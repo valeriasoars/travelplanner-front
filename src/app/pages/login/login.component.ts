@@ -5,11 +5,12 @@ import { AuthService } from '../../service/auth/auth.service';
 import { CommonModule } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 import { InitialComponent } from "../initial/initial.component";
+import { NavBarComponent } from "../../componentes/nav-bar/nav-bar.component";
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink, CommonModule, ReactiveFormsModule, InitialComponent],
+  imports: [RouterLink, CommonModule, ReactiveFormsModule, InitialComponent, NavBarComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
