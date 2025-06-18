@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NavBarComponent } from "../../componentes/nav-bar/nav-bar.component";
+import { BtnComponent } from "../../componentes/btn/btn.component";
 
 interface Destination {
   id: number;
@@ -29,7 +30,7 @@ interface Highlight {
 @Component({
   selector: 'app-initial',
   standalone: true,
-  imports: [RouterLink, NavBarComponent],
+  imports: [RouterLink, NavBarComponent, BtnComponent],
   templateUrl: './initial.component.html',
   styleUrl: './initial.component.css'
 })

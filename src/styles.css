@@ -10,7 +10,7 @@
 
 
 body{
-  background-color: var(--cor-fundo);
+  /* background-color: var(--cor-fundo); */
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 

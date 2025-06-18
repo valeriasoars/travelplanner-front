@@ -1,29 +1,40 @@
-
 .container-inicial {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.089);
+  display: flex;
+  justify-content: center;
+  background: transparent;
 }
 
-.register {
-  background-color: var( --roxo-principal);
-  padding: 10px 20px;
-  border-radius: 15px;
-  color: white !important;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.custom-navbar {
+  width: 80%;
+  max-width: 1200px;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+}
+
+/* Estilo da marca (logo) */
+.text-logo {
+  font-size: 1.8rem;
+  color: red;
   text-decoration: none;
-  display: inline-block;
 }
 
- ul li a:hover {
-  color: var( --roxo-principal);
+/* Links do menu */
+.nav-custom-link {
+  font-size: 0.9rem;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-custom-link:hover {
+  color: var(--roxo-principal);
   transform: scale(1.05);
 }
 
 
-.register:hover {
-  background-color: var( --roxo-principal);
-  transform: scale(1.05);
-  color: white !important;
+@media(max-width: 780px){
+  .custom-navbar {
+   width: 100%;
+  }
 }
 

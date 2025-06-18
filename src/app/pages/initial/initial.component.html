@@ -1,74 +1,188 @@
-<section class="sec-1">
-    <app-nav-bar></app-nav-bar> 
+<div class="decoracao-circulos">
+  <div class="circulo topo-esquerdo"></div>
+  <div class="circulo baixo-direito"></div>
 
-    <div class="box-header">
-        <div class="box-header-text">
-            <h1>Organize e Planeje suas Viagens de Forma Fácil</h1>
-            <p>Oferecemos uma plataforma completa para você planejar cada detalhe da sua viagem, desde a escolha dos destinos até a organização do roteiro e orçamentos.</p>
-            <button class="btn">Começar a planejar</button>
+<app-nav-bar></app-nav-bar>
+<section class="sec-1 container pt-2 pb-5">
+  <div class="row align-items-center">
+    <!-- Texto -->
+    <div class="col-lg-6 col-md-12 text-section mb-4 mb-lg-0">
+      <span class="badge badge-explore">
+        Explore o mundo!
+        <i class="bi bi-globe-americas ms-2"></i>
+      </span>
+      <h1 class="mt-5">
+        Tudo que Você Precisa para Organizar sua 
+        <span style="color: #6A14DA;">Próxima Viagem</span>
+      </h1>
+      <p>
+        Oferecemos uma plataforma completa para você planejar cada detalhe da
+        sua viagem, desde a escolha dos destinos até a organização do roteiro e
+        orçamentos.
+      </p>
+      <app-btn textoBotao="Comecar a planejar"></app-btn>
+      <!-- <button class="btn btn-custom">Começar a planejar</button> -->
+    </div>
+
+    <!-- Imagem -->
+    <div class="col-lg-6 col-md-12 text-center">
+      <img src="Image-home.png" alt="Imagem de viagem" class="img-fluid" />
+    </div>
+  </div>
+</section>
+</div>
+
+
+<section class="section-plan-wrapper py-5">
+  <div class="section-plan mx-auto">
+    <!-- Título alinhado à esquerda -->
+    <div class="mb-5 text-start">
+      <p class="section-subtitle">CONHEÇA NOSSO PLANEJADOR DE VIAGENS</p>
+      <h4 class="section-title">
+        Veja como podemos tornar o planejamento de suas próximas viagens mais
+        fácil.
+      </h4>
+    </div>
+
+    <!-- Cards alinhados à esquerda (com colunas alinhadas) -->
+    <div class="row g-4 section-cards">
+      <!-- Card 1 -->
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card custom-card p-4 border-0 shadow-sm">
+          <i class="fas fa-suitcase-rolling"></i>
+          <h3 class="fs-6 fw-bold mt-3">Categorização de despesas</h3>
+          <p class="text-muted">
+            Classifique seus gastos por categoria e acompanhe seus custos com clareza.
+          </p>
         </div>
-    </div>
-</section>
-
-<section class="sec-imagem">
-    <img src="https://www.pontotel.com.br/local/wp-content/uploads/2023/08/sistema-de-informacao.webp" alt="">
-</section>
-
-<section class="sec-2 container d-flex flex-column justify-content-center">
-  <div class="sec-2-descricao mb-4 text-start">
-    <h3 class="fw-bold">Mais organização nas suas viagens</h3>
-    <p class="text-muted">Gerencie e visualize seus compromissos de forma prática e eficiente.</p>
-  </div>
-
-  <div class="sec-2-funcionalidades w-100">
-    <div class="box-funcionalidades d-flex justify-content-start flex-wrap gap-4">
-      <div class="card-func bg-white shadow rounded p-4 text-start">
-        <i class="bi bi-calendar-week fs-1 text-primary mb-3 d-block"></i>
-        <h5 class="fw-semibold">Visualização Semanal</h5>
-        <p class="text-muted">Multiplos formatos de visualização: semanal, diária e geral.</p>
       </div>
-      <div class="card-func bg-white shadow rounded p-4 text-start">
-        <i class="bi bi-clock-history fs-1 text-primary mb-3 d-block"></i>
-        <h5 class="fw-semibold">Controle de Horários</h5>
-        <p class="text-muted">Organize sua agenda e evite contratempos.</p>
+
+      <!-- Card 2 -->
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card custom-card p-4 border-0 shadow-sm">
+          <i class="fas fa-map-marked-alt"></i>
+          <h3 class="fs-6 fw-bold mt-3">Roteiros Personalizados</h3>
+          <p class="text-muted">
+             Crie roteiros diários personalizados para aproveitar cada momento da sua viagem.
+          </p>
+        </div>
       </div>
-      <div class="card-func bg-white shadow rounded p-4 text-start">
-        <i class="bi bi-geo-alt fs-1 text-primary mb-3 d-block"></i>
-        <h5 class="fw-semibold">Mapeamento de Destinos</h5>
-        <p class="text-muted">Visualize rotas e locais de forma integrada.</p>
+
+      <!-- Card 3 -->
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card custom-card p-4 border-0 shadow-sm">
+          <i class="fas fa-wallet"></i>
+          <h3 class="fs-6 fw-bold mt-3">Controle de Orçamento</h3>
+          <p class="text-muted">
+             Estabeleça limites de gastos e acompanhe suas despesas em tempo real.
+          </p>
+        </div>
       </div>
-            <div class="card-func bg-white shadow rounded p-4 text-start">
-        <i class="bi bi-geo-alt fs-1 text-primary mb-3 d-block"></i>
-        <h5 class="fw-semibold">Mapeamento de Destinos</h5>
-        <p class="text-muted">Visualize rotas e locais de forma integrada.</p>
+
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+        <div class="card custom-card p-4 border-0 shadow-sm">
+          <i class="fas fa-wallet"></i>
+          <h3 class="fs-6 fw-bold mt-3">Controle de Orçamento</h3>
+          <p class="text-muted">
+            Planeje os custos da sua viagem e mantenha tudo sob controle.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<section
+  class="container py-5 d-flex flex-wrap align-items-center gap-4 justify-content-center"
+  style="min-height: 100vh"
+>
+  <!-- Texto e ícones -->
+  <div
+    class="flex-grow-1 text-section"
+    style="min-width: 320px; max-width: 600px"
+  >
+    <p
+      class="text-uppercase text-primary fw-semibold mb-2"
+      style="letter-spacing: 2px"
+    >
+       FERRAMENTAS INTELIGENTES PARA VIAJANTES
+    </p>
+    <h4 class="mb-3">
+      Planeje com liberdade, ajuste com facilidade e economize enquanto viaja.
+    </h4>
+    <p class="mb-4 text-secondary">
+       O TravelPlanner ajuda você a montar a viagem ideal: encontre destinos, organize suas atividades e mantenha seu orçamento sob controle — tudo em um só lugar.
+    </p>
 
+    <div class="d-flex flex-column gap-3">
+      <div
+        class="icon-box d-flex align-items-center gap-3 p-3 rounded shadow-sm"
+      >
+        <i class="fas fa-route bg-primary text-white rounded-circle p-3"></i>
+        <h5 class="mb-0">Ajuste seu itinerário a qualquer momento</h5>
+      </div>
+      <div
+        class="icon-box d-flex align-items-center gap-3 p-3 rounded shadow-sm"
+      >
+        <i
+          class="fas fa-calendar-alt bg-primary text-white rounded-circle p-3"
+        ></i>
+        <h5 class="mb-0">Planeje suas atividades com facilidade</h5>
+      </div>
+      <div
+        class="icon-box d-flex align-items-center gap-3 p-3 rounded shadow-sm"
+      >
+        <i class="fas fa-wallet bg-primary text-white rounded-circle p-3"></i>
+        <h5 class="mb-0">Controle seus gastos de viagem</h5>
+      </div>
+    </div>
+  </div>
 
+  <!-- Imagem -->
+  <div style="flex: 1; min-width: 280px; max-width: 500px">
+    <img
+      src="image-1.png"
+      alt="Imagem do planejador de viagens"
+      style="width: 100%; height: auto; border-radius: 12px"
+    />
+  </div>
+</section>
 
+<!-- <section class="sec-3">
+  <div>
+    <img src="image-2.png" alt="Imagem de viagem" style="width: 100%; max-width: 400px; border-radius: 10px;">
+  </div>
 
-<section class="sec-3">
-    <div>
-        <img src="https://static.vecteezy.com/ti/fotos-gratis/p2/14391233-mao-de-mulher-desenhando-no-mapa-de-viagens-planejando-viagem-ou-ferias-foto.jpg" alt="Imagem de viagem" style="width: 100%; max-width: 400px; border-radius: 10px;">
+  <div>
+    <h4>Sua Jornada Começa Aqui: Planeje Aventuras Inesquecíveis!</h4>
+    
+    <ul>
+      <li><i class="fas fa-check-circle"></i> Criação de roteiros personalizados</li>
+      <li><i class="fas fa-check-circle"></i> Controle financeiro detalhado</li>
+      <li><i class="fas fa-check-circle"></i> Adicionar fotos para guardar as lembranças para sempre</li>
+      <li><i class="fas fa-check-circle"></i> Compartilhamento de planos com amigos</li>
+    </ul>
+  </div>
+</section> -->
+
+<section class="start-journey-section">
+  <div class="container position-relative d-flex align-items-center">
+    <!-- Texto -->
+    <div class="text-side">
+      <h3>Pronto para começar sua jornada?</h3>
+      <p>
+         Comece a planejar sua próxima aventura hoje mesmo!
+      </p>
+      <button class="btn btn-light">Começar agora</button>
     </div>
 
-    <div>
-        <h4>Sua Jornada Começa Aqui: Planeje Aventuras Inesquecíveis!</h4>
-        <p>Com nosso sistema, você tem todas as ferramentas para transformar seus sonhos de viagem em realidade. Descubra como é fácil e divertido planejar cada passo, do primeiro clique à chegada ao seu destino.</p>
-        <ul>
-            <li>Criação de roteiros personalizados</li>
-            <li>Controle financeiro detalhado</li>
-            <li>Adicionar fotos para guardar as lembranças para sempre</li>
-            <li>Compartilhamento de planos com amigos</li>
-        </ul>
-        <button>Começar a planejar </button>
+    <!-- Espaço para manter o layout e posição da imagem -->
+    <div class="image-side">
+      <img src="image-planet.png" alt="Imagem planeta" class="image-planet" />
     </div>
+  </div>
 </section>
 
 <footer>
-      <h1>PlanejeViagem</h1>
-      <p>&copy; 2025 PlanejeViagem. Todos os direitos reservados.</p>
+  <p>&copy; 2025 TravelPlanner. Todos os direitos reservados.</p>
 </footer>
